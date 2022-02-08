@@ -1,0 +1,8 @@
+Package       Version
+------------- -------
+asgiref       3.5.0
+Django        4.0.2
+pip           20.3.4
+pkg-resources 0.0.0
+setuptools    44.1.1
+sqlparse      0.4.2

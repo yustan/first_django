@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Создать задачу
+{% endblock %}
+
+{% block content %}
+    <h1>Создать таску</h1><br>
+<!-- добавляем поля и кнопки  -->
+    <form method="post">
+<!-- ввставить CSRF токен для отправки формы, нужно обязательно  -->
+        {% csrf_token %}
+<!-- создали поле title для ввода  -->
+        {{ form.title }}<br>
+<!-- создали поле task для ввода  -->
+        {{ form.task }}<br>
+        <!-- Нарисовали просто красивые поля <input type="text" placeholder="Введите название задачи" class="form-control"><br>  --> 
+        <!-- Нарисовали просто красивые поля  <textarea placeholder="Введите описание задачи" class="form-control"></textarea><br>  -->
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span> {{ error }} </span>
+
+    </form>
+{% endblock %}

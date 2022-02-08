@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+<!-- получаю из views.py  -->
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Главная страница</h1>
+<!-- проверить есть ли записи -->
+    {% if tasks %} 
+<!-- выводит из бд записи  -->
+        {% for element in tasks %}
+            <div class = "alert alert-info mt-2">
+                <style>
+                    p {
+                    border: 1px solid black;
+                    padding: 10px;
+                    }
+                </style>
+                <h7>{{element.article_date}}</h7>
+                <h3>{{element.title}}</h3>
+                <p>{{element.task}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p> Нет записей </p>
+    {% endif %}
+{% endblock %}
